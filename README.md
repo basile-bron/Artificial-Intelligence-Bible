@@ -17,6 +17,12 @@ Artificial general intelligence (AGI) is the intelligence of a machine that has 
 
 Some references emphasize a distinction between strong AI and "applied AI" (also called "narrow AI" or "weak AI"): the use of software to study or accomplish specific problem solving or reasoning tasks. Weak AI, in contrast to strong AI, does not attempt to perform the full range of human cognitive abilities.
 [Wikipedia](https://en.wikipedia.org/wiki/Artificial_general_intelligence)
+
+On a side note, here is the 3 theory of consciousness that are taken seriously by the neurology community:
+- [global workspace theory](https://en.wikipedia.org/wiki/Global_workspace_theory)
+- biological theory of consciousness
+- [Higher order theory of consciousness](https://en.wikipedia.org/wiki/Higher-order_theories_of_consciousness)
+
 _________
 ## Categories of machine learning
 
@@ -38,13 +44,16 @@ Artificial neural networks (ANN) or connectionist systems are computing systems 
 An ANN is based on a collection of connected units or nodes called artificial neurons, which loosely model the neurons in a biological brain. Each connection, like the synapses in a biological brain, can transmit a signal from one artificial neuron to another. An artificial neuron that receives a signal can process it and then signal additional artificial neurons connected to it.
 
 ![](img/README-e1e57001.png)
+### Perceptron
 ### MLP (Multilayer Perceptron)
 
 [Good video explanation](https://www.youtube.com/watch?v=u5GAVdLQyIg)
+### Radial Basis Function Network
 
 ### CNN (Convolutional Neural Network)
 
-
+### Hopfield network
+### Boltzmann Machine Network
 ### RNN (Recurrent Neural Network)
 
 What is a recurrent neural network ?
@@ -60,6 +69,9 @@ Note: Stochastic gradient descent apparently don't work well with RNN
 [Wikipedia](https://en.wikipedia.org/wiki/Long_short-term_memory) |
 [The paper](https://www.bioinf.jku.at/publications/older/2604.pdf)
 ### GAN (Generative adversarial network)
+![](img/README-3606fe15.png)
+
+[paper](https://arxiv.org/pdf/1406.2661.pdf)
 
 ## Layers
 ________
@@ -78,10 +90,16 @@ ________
 ![](img/README-9ad36b45.png)
 
 
-## gradient descent and  stochastic gradient descent
+## gradient descent
+
+![](img/README-be9647f2.png)
+
+## stochastic gradient descent
 In both gradient descent (GD) and stochastic gradient descent (SGD), you update a set of parameters in an iterative manner to minimize an error function.
 
 While in GD, you have to run through ALL the samples in your training set to do a single update for a parameter in a particular iteration, in SGD, on the other hand, you use ONLY ONE or SUBSET of training sample from your training set to do the update for a parameter in a particular iteration. If you use SUBSET, it is called Minibatch Stochastic gradient Descent.
+
+![](img/README-b4dc4b9c.png)
 
 Thus, if the number of training samples are large, in fact very large, then using gradient descent may take too long because in every iteration when you are updating the values of the parameters, you are running through the complete training set. On the other hand, using SGD will be faster because you use only one training sample and it starts improving itself right away from the first sample.
 
@@ -90,6 +108,9 @@ SGD often converges much faster compared to GD but the error function is not as 
 If you need an example of this with a practical case, check Andrew NG's notes here where he clearly shows you the steps involved in both the cases. cs229-notes
 [source](https://datascience.stackexchange.com/questions/36450/what-is-the-difference-between-gradient-descent-and-stochastic-gradient-descent)
 ______________________________
+
+## Mini-batch gradient descent
+
 # other
 autoML
 
