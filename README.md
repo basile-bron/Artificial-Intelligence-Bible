@@ -3,7 +3,6 @@
 
 This repository is aiming to regroup most of the definition in the field of AI. Since there is a lot of things to remember, I would advice the use of flashcard if you are new to the field.
 
-
 ## General terms
 ### Narrow/Weak Artificial Intelligence
 
@@ -45,15 +44,24 @@ An ANN is based on a collection of connected units or nodes called artificial ne
 
 ![](img/README-e1e57001.png)
 ### Perceptron
+
+- Category : Supervised learning
+
+The perceptron is one of the very first algorithms of machine learning, and the most simple artificial neural network.
+
 ### MLP (Multilayer Perceptron)
 
 [Good video explanation](https://www.youtube.com/watch?v=u5GAVdLQyIg)
 ### Radial Basis Function Network
 
 ### CNN (Convolutional Neural Network)
+#### Padding
+#### Max pooling
+#### Average pooling
 
-### Hopfield network
+
 ### Boltzmann Machine Network
+- Category : unsupervised machine learning
 ### RNN (Recurrent Neural Network)
 
 What is a recurrent neural network ?
@@ -63,11 +71,15 @@ How does it work exactly ?
 - During the forward propagation the weight of the hidden layer are the one from the previous layer.
 
 Note: Stochastic gradient descent apparently don't work well with RNN
-
 #### LSTM (Long Short Term Memory)
 
 [Wikipedia](https://en.wikipedia.org/wiki/Long_short-term_memory) |
 [The paper](https://www.bioinf.jku.at/publications/older/2604.pdf)
+
+#### Hopfield network
+- Category : unsupervised machine learning
+The Hopfield network is an [Auto-associative Memory Network](https://en.wikipedia.org/wiki/Autoassociative_memory)
+
 ### GAN (Generative adversarial network)
 ![](img/README-3606fe15.png)
 
@@ -111,6 +123,11 @@ ______________________________
 
 ## Mini-batch gradient descent
 
+
+# Conclusion
+
+![](img/README-0cc77cbc.png)
+https://towardsdatascience.com/the-mostly-complete-chart-of-neural-networks-explained-3fb6f2367464
 # other
 autoML
 
