@@ -71,9 +71,42 @@ _________
 ## Categories of machine learning
 
 ### Unsupervised Learning
-Unsupervised learning is a type of self-organized Hebbian learning that helps find previously unknown patterns in data set without pre-existing labels. It is also known as self-organization and allows modeling probability densities of given inputs. It is one of the main three categories of machine learning, along with supervised and reinforcement learning. Semi-supervised learning has also been described, and is a hybridization of supervised and unsupervised techniques.
+Unsupervised learning is a type of self-organized Hebbian learning that helps find previously unknown patterns in data set without pre-existing labels. It is also known as self-organization and allows modeling probability densities of given inputs. It is **one of the main three categories of machine learning, along with supervised and reinforcement learning.**
+
 [Wikipedia](https://en.wikipedia.org/wiki/Unsupervised_learning)
 ![](img/README-6b811f2b.png)
+
+the four main task of unsupervised learning are:
+ - **Dimensionality reduction**
+
+ - **Clustering**
+
+Group similar instance together into *cluster*
+ - **Anomaly detection**
+
+Learn what a "normal" data look like, and use it to detect abnormal instances.
+
+ - **Density estimation**
+
+ Estimating how isolated a data is. *i.g* instance located in low density region are likely to be Anomaly. it is usefull for *data analysis, data visualisation and anomaly detection*.
+
+#### Clustering
+*(page 237)* Used for :
+- Customer segmentation
+- Data analysis
+- Dimensionality reduction
+- Anomaly detection
+- Semi-supervised learning
+- Search engines (similar image search)
+- Segment an image
+
+
+#### DBSCAN
+#### K-Means
+
+
+### Semi-Supervised Learning
+Semi-supervised is a hybridization of supervised and unsupervised techniques.
 
 ### Supervised Learning
 Supervised learning is the machine learning task of learning a function that maps an input to an output based on example input-output pairs. It infers a function from labelled training data consisting of a set of training examples. In supervised learning, each example is a pair consisting of an input object (typically a vector) and a desired output value (also called the supervisory signal). A supervised learning algorithm analyses the training data and produces an inferred function, which can be used for mapping new examples. An optimal scenario will allow for the algorithm to correctly determine the class labels for unseen instances. This requires the learning algorithm to generalize from the training data to unseen situations in a "reasonable" way (see inductive bias).
