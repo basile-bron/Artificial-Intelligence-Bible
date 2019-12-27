@@ -30,7 +30,8 @@ legend
 ![](img/README-00989ca8.png)
 ________
 ## Activation function
-
+The activation function of a node defines the output of that node given an input or set of inputs.
+[wikipedia](https://en.wikipedia.org/wiki/Activation_function)
 ### Cross Validation
 
 ### Regularisation
@@ -98,11 +99,62 @@ The perceptron is one of the very first algorithms of machine learning, and the 
 ### MLP (Multilayer Perceptron)
 
 [Good video explanation](https://www.youtube.com/watch?v=u5GAVdLQyIg)
+### Feed Forward (FF)
+![](img/README-ba45725d.png)
 ### Radial Basis Function Network
-
+![](img/README-1c237d52.png)
 ### CNN (Convolutional Neural Network)
+![](img/README-edda8aca.png)
+#### Filter / kernel
+In a CNN the filters contain the weight
+#### Stride
 #### Padding
+What?
+- Padding is a technique that add border of x number of pixel on an image
+Why?
+- To allowed to do convolution without loosing pixel on the image itself.
+how ?
+![](img/README-e72318a0.png)
 #### Max pooling
+
+**What does it do?**
+Applying max pooling on a matrix will reduce the size of the given image/matrix.
+
+**Why ?**
+This is done to in part to help over-fitting by providing an abstracted form of the representation. As well, it reduces the computational cost by reducing the number of parameters to learn and provides basic translation invariance to the internal representation.
+
+- it is quicker than convoluting
+
+**How exactly?**
+Forward propagation :
+Just store the maximum value highlighted by your filter at each step :
+
+![](img/README-0b91a344.png)
+
+Backpropagation:
+Resituate the maximum value that were stored precedently in their respective place and zeroed out the other cell.
+
+![](img/README-a2212cf3.png)
+
+Now the question is "ok, but how do I remember their place of I only have the max number?"
+
+In practice, this is achieved by creating a mask that remembers the position of the values used in the first phase, which we can later utilize to transfer the gradients.
+
+**example ?**
+
+![](img/README-67613e2e.png)
+![](img/README-d211c064.png)
+
+**Some anecdote?**
+There are multiple pooling technique
+- Max pooling: The maximum pixel value of the batch is selected.
+- Min pooling: The minimum pixel value of the batch is selected.
+- Average pooling: The average value of all the pixels in the batch is selected.
+
+![](img/README-1d36af86.png)
+
+max pooling can apparently be replaced with a convolutional layer with increased stride without loss in accuracy. it is described in this paper : https://arxiv.org/pdf/1412.6806.pdf
+
 #### Average pooling
 
 
