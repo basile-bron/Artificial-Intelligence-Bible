@@ -103,6 +103,16 @@ Learn what a "normal" data look like, and use it to detect abnormal instances.
 
 #### DBSCAN
 #### K-Means
+- how does it work ?
+![](img/README-bb84007a.png)
+1) Centroids are assigned randomly
+
+
+![](img/README-4398e787.png)
+- what about it's complexity ?
+K-means is **generally linear** with regard to m, k, n. However if the structure does not have a clustering structure it can increase exponentially but it is rarely the case, generaly speaking K-Means is one of the fastest clustering algorithms.
+
+- When should you use it ?
 
 
 ### Semi-Supervised Learning
@@ -194,10 +204,10 @@ max pooling can apparently be replaced with a convolutional layer with increased
 
 ### RNN (Recurrent Neural Network)
 
-What is a recurrent neural network ?
+**What is a recurrent neural network ?**
 - A recurrent neural network use the weight of the previous occurrence.
 
-How does it work exactly ?
+**How does it work exactly ?**
 - During the forward propagation the weight of the hidden layer are the one from the previous layer.
 
 Note: Stochastic gradient descent apparently don't work well with RNN
@@ -251,8 +261,17 @@ autoML
 
   </details>
 
-* ?
+* What are the pros and cons of supervised vs unsupervised learning ?
   <details>
   <summary>Answer</summary>
 
+  **Supervised**
+  - More accurate
+  - Labelled data required
+  - Requires human in the loop
+
+  **Unsupervised**
+  - Less accurate
+  - No labelled data required
+  - Minimal human effort
   </details>
