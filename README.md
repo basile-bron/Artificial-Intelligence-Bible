@@ -44,12 +44,11 @@ The activation function of a node defines the output of that node given an input
 ### Overfitting (high variance) and Underfitting (High bias)
 ![](img/README-9ad36b45.png)
 
-
-## gradient descent
+## Gradient descent
 
 ![](img/README-be9647f2.png)
 
-## stochastic gradient descent
+### Stochastic gradient descent (SGD)
 In both gradient descent (GD) and stochastic gradient descent (SGD), you update a set of parameters in an iterative manner to minimize an error function.
 
 While in GD, you have to run through ALL the samples in your training set to do a single update for a parameter in a particular iteration, in SGD, on the other hand, you use ONLY ONE or SUBSET of training sample from your training set to do the update for a parameter in a particular iteration. If you use SUBSET, it is called Minibatch Stochastic gradient Descent.
@@ -64,14 +63,10 @@ If you need an example of this with a practical case, check Andrew NG's notes he
 [source](https://datascience.stackexchange.com/questions/36450/what-is-the-difference-between-gradient-descent-and-stochastic-gradient-descent)
 ______________________________
 
-## Mini-batch gradient descent
-
-
-_________
 ## Categories of machine learning
 
 ### Unsupervised Learning
-Unsupervised learning is a type of self-organized Hebbian learning that helps find previously unknown patterns in data set without pre-existing labels. It is also known as self-organization and allows modeling probability densities of given inputs. It is **one of the main three categories of machine learning, along with supervised and reinforcement learning.**
+Unsupervised learning is a type of self-organized Hebbian learning that helps find previously unknown patterns in data set without pre-existing labels. It is also known as self-organization and allows modelling probability densities of given inputs. It is **one of the main three categories of machine learning, along with supervised and reinforcement learning.**
 
 [Wikipedia](https://en.wikipedia.org/wiki/Unsupervised_learning)
 ![](img/README-6b811f2b.png)
@@ -100,20 +95,30 @@ Learn what a "normal" data look like, and use it to detect abnormal instances.
 - Search engines (similar image search)
 - Segment an image
 
-
-#### DBSCAN
 #### K-Means
 - how does it work ?
 ![](img/README-bb84007a.png)
 1) Centroids are assigned randomly
 
-
 ![](img/README-4398e787.png)
 - what about it's complexity ?
-K-means is **generally linear** with regard to m, k, n. However if the structure does not have a clustering structure it can increase exponentially but it is rarely the case, generaly speaking K-Means is one of the fastest clustering algorithms.
+K-means is **generally linear** with regard to m, k, n. However if the structure does not have a clustering structure it can increase exponentially but it is rarely the case, generally speaking K-Means is one of the fastest clustering algorithms.
 
-- When should you use it ?
+- What are the disadvantage?
 
+1) Kmeans tries to create same sized cluster no matter how the data is scattered
+2) Kmeans doesnt work well for non-globular structures
+3) Kmeans doesnt care about how dense the data is present
+4) Curse of dimensionality affects kmeans at high dimension since it uses distance measure
+
+#### DBSCAN
+DBSCAN is meant to use
+
+#### Auto encoder
+"An autoencoder is a type of artificial neural network used to learn efficient data codings in an unsupervised manner.[1] The aim of an autoencoder is to learn a representation (encoding) for a set of data, typically for dimensionality reduction, by training the network to ignore signal “noise”. Along with the reduction side, a reconstructing side is learnt, where the autoencoder tries to generate from the reduced encoding a representation as close as possible to its original input, hence its name."
+[source][https://en.wikipedia.org/wiki/Autoencoder]
+
+"Auto encoder are just neural network where the target output is the input."
 
 ### Semi-Supervised Learning
 Semi-supervised is a hybridization of supervised and unsupervised techniques.
@@ -200,8 +205,6 @@ max pooling can apparently be replaced with a convolutional layer with increased
 
 #### Average pooling
 
-
-
 ### RNN (Recurrent Neural Network)
 
 **What is a recurrent neural network ?**
@@ -246,6 +249,8 @@ The Hopfield network is an [Auto-associative Memory Network](https://en.wikipedi
 
 ![](img/README-1c865349.png)
 
+
+
 # Conclusion
 
 ![](img/README-0cc77cbc.png)
@@ -254,6 +259,7 @@ https://towardsdatascience.com/the-mostly-complete-chart-of-neural-networks-expl
 autoML
 
 # Question
+
 
 * Whet is the difference between Artificial Neural Network and deep learning?
   <details>
@@ -275,3 +281,7 @@ autoML
   - No labelled data required
   - Minimal human effort
   </details>
+
+# Most interesting stack overflow thread I saw:
+- [Is running more epoch really a direct cause of Overfitting ?](https://ai.stackexchange.com/questions/17287/is-running-more-epochs-really-a-direct-cause-of-overfitting)
+This thread made me realise that if you want to know if you tuned your hyperparameter properly you should run as much epoch as possible. if it does not overfit then you won.
