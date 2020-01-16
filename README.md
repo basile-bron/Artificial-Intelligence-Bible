@@ -24,6 +24,8 @@ On a side note, here is the 3 theory of consciousness that are taken seriously b
 - biological theory of consciousness
 - [Higher order theory of consciousness](https://en.wikipedia.org/wiki/Higher-order_theories_of_consciousness)
 
+# ANN (Artificial Neural Network)
+![](assets/README-cbf40efe.png)
 _________
 ## Layers
 legend
@@ -32,6 +34,16 @@ ________
 ## Activation function
 The activation function of a node defines the output of that node given an input or set of inputs.
 [wikipedia](https://en.wikipedia.org/wiki/Activation_function)
+
+### Sigmoid
+![](assets/README-68802d48.png)
+![](assets/README-a9b26082.png)
+### Tanh
+![](assets/README-cd750816.png)
+### reLu
+### LeakyReLU
+
+
 ### Cross Validation
 
 ### Regularisation
@@ -111,11 +123,48 @@ K-means is **generally linear** with regard to m, k, n. However if the structure
 3) Kmeans doesnt care about how dense the data is present
 4) Curse of dimensionality affects kmeans at high dimension since it uses distance measure
 
+##### Mini batch Kmean
+##### elkan Kmean
+
+
 #### DBSCAN
-DBSCAN is meant to use
+[Demo](https://www.naftaliharris.com/blog/visualizing-dbscan-clustering/)
+
+Why DBSCAN ?
+- Desnsity
+- Spatial
+- Clustering of
+- Application with
+- Noise
+What input does it take ?
+- Set of points
+- Neighborhood N
+- minpts (density)
+
+How does it work ?
+
+- 1) For each instance, the algorithm count how many instances are located within a small distance "epsilon". this region is called the **epsilon-neighbourhood**.
+
+- 2) If an instance has at least **min_sample** instances in its **epsilon-neighbourhood** (including itself then it is considered a **core instance**) in other word the instance is considered to be in a dense regions.
+
+- 3) All instances in the **neighbourhood** of a **core instance** belong to the same cluster. this neighbourhood may include other core instances; therefore, a long sequence of neighbouring core instances form a single cluster.
+
+- 4) Any instance that is not a core instance and does not have one in it's neighbourhood is **considered an anomaly**.
+
+cons :
+- How to choose the density level (i.e min_neighbors) ?
+- changing levels means starting from scratch.
+
+##### how to find epsilon ?
+In layman’s terms, we find a suitable value for epsilon by calculating the distance to the nearest n points for each point, sorting and plotting the results. Then we look to see where the change is most pronounced (think of the angle between your arm and forearm) and select that as epsilon.
+[source](https://towardsdatascience.com/machine-learning-clustering-dbscan-determine-the-optimal-value-for-epsilon-eps-python-example-3100091cfbc)
+
+#### Level Set Tree
+
+
 
 #### Auto encoder
-"An autoencoder is a type of artificial neural network used to learn efficient data codings in an unsupervised manner.[1] The aim of an autoencoder is to learn a representation (encoding) for a set of data, typically for dimensionality reduction, by training the network to ignore signal “noise”. Along with the reduction side, a reconstructing side is learnt, where the autoencoder tries to generate from the reduced encoding a representation as close as possible to its original input, hence its name."
+"An autoencoder is a type of artificial neural network used to learn efficient data codings in an unsupervised manner. The aim of an autoencoder is to learn a representation (encoding) for a set of data, typically for dimensionality reduction, by training the network to ignore signal “noise”. Along with the reduction side, a reconstructing side is learnt, where the autoencoder tries to generate from the reduced encoding a representation as close as possible to its original input, hence its name."
 [source][https://en.wikipedia.org/wiki/Autoencoder]
 
 "Auto encoder are just neural network where the target output is the input."
@@ -281,7 +330,9 @@ autoML
   - No labelled data required
   - Minimal human effort
   </details>
-
+# Interesting mention
+generative design
+Geodesign
 # Most interesting stack overflow thread I saw:
 - [Is running more epoch really a direct cause of Overfitting ?](https://ai.stackexchange.com/questions/17287/is-running-more-epochs-really-a-direct-cause-of-overfitting)
 This thread made me realise that if you want to know if you tuned your hyperparameter properly you should run as much epoch as possible. if it does not overfit then you won.
