@@ -13,7 +13,7 @@ image_hsv=cv2.cvtColor(image_rgb,cv2.COLOR_BGR2RGB)
 X = image_hsv.reshape(-1, 3)
 
 #Kmean
-kmeans = KMeans(n_clusters=3).fit(X)
+kmeans = KMeans(n_clusters=6).fit(X)
 segmented_img = kmeans.cluster_centers_[kmeans.labels_]
 segmented_img = segmented_img = segmented_img.reshape(image.shape)
 segmented_img.shape
@@ -28,11 +28,11 @@ plt.imshow(image_rgb)
 plt.figure(2)
 plt.clf()
 plt.axis('off')
-plt.title('Original image (96,615 colors)')
+plt.title('HSV image')
 plt.imshow(image_hsv)
 
 plt.figure(3)
 plt.clf()
 plt.axis('off')
-plt.title('Original image (96,615 colors)')
+plt.title('kmean result')
 plt.imshow(segmented_img.astype('uint8'))
