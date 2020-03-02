@@ -1,6 +1,7 @@
 from sklearn.cluster import KMeans
 from sklearn.datasets import load_digits
 X_digits, y_digits = load_digits(return_X_y=True)
+
 #split training and test set
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X_digits, y_digits)
@@ -35,17 +36,3 @@ grid_clf.fit(X_train, y_train)
 
 grid_clf.best_params_
 grid_clf.score(X_test, y_test)
-
-# CLUSTERING FOR SEMI SUPERVISED LEARNING
-n_labeled = 50
-log_reg = LogisticRegression()
-log_reg.fit(X_train[:n_labeled], y_train[:labeled])
-#performance of the model on the test set ?
-log_reg.score(X_test, y_test)
-
-##########################################
-k = 50
-kmeans = KMeans(n_clusters=k)
-X_digits_dist = kmeans.fit_transform(X_train)
-representative_digit_idx = np.argmin(X_digits_dist, axis=0)
-X_representative_digits = X_train[representative_digit_idx]
