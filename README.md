@@ -167,9 +167,14 @@ In layman’s terms, we find a suitable value for epsilon by calculating the dis
 ##### Mean-Shift
 ##### Affinity propagation
 ##### Spectral clustering
+#### Dimensionality reduction
+Reduce the dimension of a dataset visualisation, to have a better understanding of the data.
+##### PCA
+PCA select the axis that has the most variation to avoid losing as much information as possible.
 
+the variance ratio is regarded as the amount of information kept during the dimensionality reduction, you generally don't want the variance to go lower than 95% unless it is for data visualisation. In that case use 2 or 3 dimension to have a clear visual of your data
 #### Auto encoder
-"An autoencoder is a type of artificial neural network used to learn efficient data codings in an unsupervised manner. The aim of an autoencoder is to learn a representation (encoding) for a set of data, typically for dimensionality reduction, by training the network to ignore signal “noise”. Along with the reduction side, a reconstructing side is learnt, where the autoencoder tries to generate from the reduced encoding a representation as close as possible to its original input, hence its name."
+"An autoencoder is a type of artificial neural network used to learn efficient data coding in an unsupervised manner. The aim of an autoencoder is to learn a representation (encoding) for a set of data, typically for dimensionality reduction, by training the network to ignore signal “noise”. Along with the reduction side, a reconstructing side is learnt, where the autoencoder tries to generate from the reduced encoding a representation as close as possible to its original input, hence its name."
 [source][https://en.wikipedia.org/wiki/Autoencoder]
 
 "Auto encoder are just neural network where the target output is the input."

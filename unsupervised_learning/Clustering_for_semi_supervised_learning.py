@@ -56,12 +56,11 @@ X_representative_digits.shape
 img = X_representative_digits.reshape([50  ,8, 8])
 show_images(img[0:50], cols = 1, titles = None)
 
-y_representative_digits = np.array([4,0,7,6,8,9,5,2,3,3,8,4,9,2,5,9,7,0,6,1,2,8,4,5,3,4,6,4,8,5,6,1,2,7,9,1,1,2,1,4,0,9,2,2,7,7,9,4,4,8])
+y_representative_digits = np.array([6,8,2,0,4,9,7,5,1,3,3,8,6,3,7,1,2,4,7,2,0,6,7,2,6,5,4,5,2,1,8,4,7,7,2,4,2,9,8,5,9,6,3,9,2,4,4,0,1,8])
 #################
 log_reg = LogisticRegression(solver='lbfgs', multi_class='auto',max_iter=1000)
 log_reg.fit(X_representative_digits, y_representative_digits)
 log_reg.score(X_test, y_test)
-
 
 #LABEL PROPAGATION
 y_train_propagated = np.empty(len(X_train), dtype=np.int32)
@@ -69,6 +68,49 @@ for i in range(k):
     y_train_propagated[kmeans.labels_==i] = y_representative_digits[i]
 
 #training the model and see performance result
-log_reg = LogisticRegression()
+log_reg = LogisticRegression(solver='lbfgs', multi_class='auto',max_iter=10000)
 log_reg.fit(X_train, y_train_propagated)
 log_reg.score(X_test, y_test)
+
+#LABEL PARTIAL PROPAGATION
+#try to only propagate to the 20% of instances closest to the Centroids
+percentile_closest = 20
+
+X_cluster_dist = X_digits_dist[np.arange(len(X_train)), kmeans.labels_]
+for i in range(k):
+    in_cluster = (kmeans.labels_ == i)
+    cluster_dist = X_cluster_dist[in_cluster]
+    cutoff_distance = np.percentile(cluster_dist, percentile_closest)
+    above_cutoff = (X_cluster_dist > cutoff_distance)
+    X_cluster_dist[in_cluster & above_cutoff] = -1
+
+partially_propagated = (X_cluster_dist != -1)
+X_train_partially_propagated = X_train[partially_propagated]
+y_train_partially_propagated = y_train_propagated[partially_propagated]
+
+#let's train the model on this partially propageted dataset
+log_reg = LogisticRegression(solver='lbfgs', multi_class='auto',max_iter=10000)
+log_reg.fit(X_train_partially_propagated, y_train_partially_propagated)
+log_reg.score(X_test, y_test)
+
+#display graph
+#plots
+print(y_test.shape)
+print(X_test.shape)
+
+colors = ['olive', 'maroon','royalblue',  'forestgreen', 'mediumorchid', 'tan', 'deeppink',  'goldenrod', 'lightcyan', 'navy']
+#colors = { 0:'green', 1:'yellow'}
+#vectorizer = np.vectorize(lambda x: colors[x % len(colors)])
+#plt.scatter(X_test[:, 0], y_test[:, 0], c=vectorizer(y_train_partially_propagated), s=50, cmap='viridis')
+plt.plot(X_train)
+plt.show()
+
+plt.figure(figsize=(16,10))
+sns.scatterplot(
+    x="pca-one", y="pca-two",
+    hue="y",
+    palette=sns.color_palette("hls", 10),
+    data=df.loc[rndperm,:],
+    legend="full",
+    alpha=0.3
+)
