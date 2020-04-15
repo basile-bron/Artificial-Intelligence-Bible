@@ -317,6 +317,30 @@ https://towardsdatascience.com/the-mostly-complete-chart-of-neural-networks-expl
 # other
 autoML
 
+## Training Models
+### Linear regression (multiple and single)
+![](img/README-cb719ed8.png)
+
+**Linear regression** allow us to put a **straight line** that match the trend of a graph with 2 output (or more with multiple linear regression). It is used to then make prediction.
+
+![](img/README-e80abbd7.png)
+
+What about the training ?
+We use Root Mean Square Error or Mean square error.
+![](img/README-279baee6.png)
+
+[source](https://machinelearningmastery.com/implement-simple-linear-regression-scratch-python/
+)
+
+### Logistic Regression
+Logistic regression is different from linear regression in the sense that it is used to predict a boolean.
+
+**Logistic  Regression predict whether something is true or false.**
+![](img/README-1fe4ebd5.png)
+
+### Polynomial Regression
+![](img/README-ed7a7eba.png)
+
 # Question
 
 
