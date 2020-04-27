@@ -318,7 +318,8 @@ https://towardsdatascience.com/the-mostly-complete-chart-of-neural-networks-expl
 autoML
 
 ## Training Models
-### Linear regression (multiple and single)
+### Generalised linear models
+#### Linear regression (multiple and single)
 ![](img/README-cb719ed8.png)
 
 **Linear regression** allow us to put a **straight line** that match the trend of a graph with 2 output (or more with multiple linear regression). It is used to then make prediction.
@@ -332,14 +333,24 @@ We use Root Mean Square Error or Mean square error.
 [source](https://machinelearningmastery.com/implement-simple-linear-regression-scratch-python/
 )
 
-### Logistic Regression
-Logistic regression is different from linear regression in the sense that it is used to predict a boolean.
+#### Logistic Regression
+Logistic regression is a binary classifier. It is different from linear regression, in the sense that it is used to predict a boolean.
 
 **Logistic  Regression predict whether something is true or false.**
 ![](img/README-1fe4ebd5.png)
 
 ### Polynomial Regression
-![](img/README-ed7a7eba.png)
+![polynomial regression compared](img/README-ed7a7eba.png)
+
+# Misc
+## Decision Tree
+| pro | cons  |
+| :------------- | :------------- |
+| Require very little data preparation. (no need for scalling or normalization)       | A small change in the data can cause a large change in the structure of the decision tree causing instability.      |
+| Missing value does not affect noticeably the result| Often require higher time to train the model |
+| Very straightforward result | Cannot handle complicated relationship between feature|
+
+[implementation example](decision_tree/)
 
 # Question
 
