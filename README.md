@@ -174,10 +174,25 @@ PCA select the axis that has the most variation to avoid losing as much informat
 
 the variance ratio is regarded as the amount of information kept during the dimensionality reduction, you generally don't want the variance to go lower than 95% unless it is for data visualisation. In that case use 2 or 3 dimension to have a clear visual of your data
 #### Auto encoder
+**"official" explenation :**
 "An autoencoder is a type of artificial neural network used to learn efficient data coding in an unsupervised manner. The aim of an autoencoder is to learn a representation (encoding) for a set of data, typically for dimensionality reduction, by training the network to ignore signal “noise”. Along with the reduction side, a reconstructing side is learnt, where the autoencoder tries to generate from the reduced encoding a representation as close as possible to its original input, hence its name."
 [source][https://en.wikipedia.org/wiki/Autoencoder]
 
-"Auto encoder are just neural network where the target output is the input."
+**"shortcut" explaination :**
+Auto encoder are just neural network where the target output is the input. and with a bottleneck in the middle.
+
+Basicaly it is an "auto compression algorithms" but it goes further than that:
+![](assets/README-b941d5fa.png)
+#### Denoising Autoencoder
+https://towardsdatascience.com/denoising-autoencoders-explained-dbb82467fc2
+#### Sparse Autoencoder
+https://medium.com/@syoya/what-happens-in-sparse-autencoder-b9a5a69da5c6
+https://web.stanford.edu/class/cs294a/sparseAutoencoder.pdf
+#### Contractive Autoencoder
+https://medium.com/@debanjandatta/deep-contractive-auto-encoder-in-keras-aa074d839eb6
+https://deepai.org/machine-learning-glossary-and-terms/contractive-autoencoder
+#### variational autoencoder
+https://towardsdatascience.com/understanding-variational-autoencoders-vaes-f70510919f73
 
 ### Semi-Supervised Learning
 Semi-supervised is a hybridization of supervised and unsupervised techniques.
@@ -196,16 +211,16 @@ An ANN is based on a collection of connected units or nodes called artificial ne
 
 ![](img/README-e1e57001.png)
 ### Perceptron
-
-- Category : Supervised learning
+![](assets/README-88266d80.png)
 
 ![](img/README-eaa240d8.png)
 
 The perceptron is one of the very first algorithms of machine learning, and the most simple artificial neural network.
 
 ### MLP (Multilayer Perceptron)
-
+![](assets/README-8899a3d1.png)
 [Good video explanation](https://www.youtube.com/watch?v=u5GAVdLQyIg)
+### Cross entropy
 ### Feed Forward (FF)
 ![](img/README-ba45725d.png)
 ### Radial Basis Function Network
@@ -301,11 +316,12 @@ The Hopfield network is an [Auto-associative Memory Network](https://en.wikipedi
 
 ![](img/README-9411e985.png)
 ### GAN (Generative adversarial network)
-![](img/README-a0dbf6d6.png)
 ![](img/README-3606fe15.png)
 
 [paper](https://arxiv.org/pdf/1406.2661.pdf)
 
+
+### DRN
 ![](img/README-1c865349.png)
 
 
@@ -351,6 +367,15 @@ Logistic regression is a binary classifier. It is different from linear regressi
 | Very straightforward result | Cannot handle complicated relationship between feature|
 
 [implementation example](decision_tree/)
+
+![petal decision tree](assets/README-aa81072c.png)
+Now at this point it kind of feel like magic. but take a look a the following graph on the picture to have a better intuition of what the algorithm do.
+
+![graph equation decision tree](assets/README-76ac06ce.png)
+to clarify a the equation itself here is a [video](https://www.youtube.com/watch?v=atw7hUrg3_8) that worked for me (brave yourself for the Indian accent).
+
+also here is a really good [article](https://towardsdatascience.com/entropy-how-decision-trees-make-decisions-2946b9c18c8) that explain the equation.
+
 
 # Question
 
