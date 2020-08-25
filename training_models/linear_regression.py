@@ -1,29 +1,29 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import pandas as pd
 
-#generate random dataset
-X = 2 * np.random.rand(100,1)
-#function : y = 4 + 3 *X + random gaussian noise
-y = 4 + 3 * X + np.random.randn(100,1)
-plt.plot(X,y, 'ro')
-plt.show()
+data = pd.read_csv("data/weatherHistory.csv")
 
-#linear regression
-X_b = np.c_[np.ones((100, 1)), X] #add x0 = 1 to each instances because we don't want to multiply by less than 1
-theta_best = np.linalg.inv(X_b.T.dot(X_b)).dot(X_b.T).dot(y)
-print("theta best :", theta_best)
+X= data["Temperature (C)"]
+y = data["Humidity"]
+xy = X*y
+x2 = X**2
 
-# make predictions using theta_best
-X_new = np.array([[0], [2]])
-X_new_b = np.c_[np.ones((2,1)), X_new] # add x0 = 1 to each instance
-y_predict = X_new_b.dot(theta_best)
-print("y_predict best :", y_predict)
+b = (xy.sum()-X.sum()*y.sum()/len(X)) / (x2.sum()-X.sum()**2/len(X))
+a = y.sum()/len(X)-b*X.sum()/len(X)
+y_p = a + b*X
+print('Fitted regression: y = '+str(a)+' + '+str(b)+'x')
 
-plt.plot(X_new, y_predict, "r-")
-plt.plot(X, y, "b.")
-plt.axis([0, 2, 0, 15])
-plt.show()
+plt.scatter(X, y)
+plt.plot(X, y_p, color='orange')
 
+data.plot(kind='hexbin',
+            x='Temperature (C)',
+            y='Humidity',
+            gridsize=20, figsize=(12,8),
+            cmap="Blues", sharex=False)
+
+plt.plot(X, y_p, color='orange')
 ###################################################
 #USING SCIKIT LEARN
 ###################################################
@@ -32,7 +32,6 @@ lin_reg = LinearRegression()
 lin_reg.fit(X, y)
 lin_reg.intercept_, lin_reg.coef_
 y_predict = lin_reg.predict(X_new)
-
 
 theta_best_svd, residuals, rank , s = np.linalg.lstsq(X_b, y, rcond=1e-6)
 print("theta best :", theta_best_svd)

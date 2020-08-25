@@ -29,7 +29,6 @@ On a side note, here is the 3 theory of consciousness that are taken seriously b
 _________
 ## Layers
 legend
-![](img/README-00989ca8.png)
 ________
 ## Activation function
 The activation function of a node defines the output of that node given an input or set of inputs.
@@ -74,7 +73,7 @@ SGD often converges much faster compared to GD but the error function is not as 
 If you need an example of this with a practical case, check Andrew NG's notes here where he clearly shows you the steps involved in both the cases. cs229-notes
 [source](https://datascience.stackexchange.com/questions/36450/what-is-the-difference-between-gradient-descent-and-stochastic-gradient-descent)
 ______________________________
-
+### Early stopping
 ## Categories of machine learning
 
 ### Unsupervised Learning
