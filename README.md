@@ -443,3 +443,6 @@ Geodesign
 # Most interesting stack overflow thread I saw:
 - [Is running more epoch really a direct cause of Overfitting ?](https://ai.stackexchange.com/questions/17287/is-running-more-epochs-really-a-direct-cause-of-overfitting)
 This thread made me realise that if you want to know if you tuned your hyperparameter properly you should run as much epoch as possible. if it does not overfit then you won.
+
+# Most interesting blog posts I saw:
+[sanity check before training](https://cs231n.github.io/neural-networks-3/#sanitycheck)
