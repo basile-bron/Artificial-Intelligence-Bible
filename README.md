@@ -24,6 +24,11 @@ On a side note, here is the 3 theory of consciousness that are taken seriously b
 - biological theory of consciousness
 - [Higher order theory of consciousness](https://en.wikipedia.org/wiki/Higher-order_theories_of_consciousness)
 
+## Ensemble learning method 
+### Random Forest
+
+
+
 # ANN (Artificial Neural Network)
 ![](assets/README-cbf40efe.png)
 _________
@@ -375,9 +380,42 @@ to clarify a the equation itself here is a [video](https://www.youtube.com/watch
 
 also here is a really good [article](https://towardsdatascience.com/entropy-how-decision-trees-make-decisions-2946b9c18c8) that explain the equation.
 
+# Transformer
+The transformer is composed of multiple parts and subparts.
 
+It firstly consists of the encoder, decoder and a final linear layer.
+
+Then in the encoder the first concept is the attention mechanism or "Scaled Dot-Product Attention" as stated in the [paper](https://arxiv.org/pdf/1706.03762.pdf).
+
+The second concept is the "Multi-Head Attention" which is simply the parallelized version of the former
+
+# Self attention
+
+![](README.assets/README-6f921b87.png)
+
+In a nutshell self attention is basically getting the vectors after the word embedding layer and mixing/influencing each vector to one another.
+
+The output is then the same amount of vector/word but each one is now semantically related to the context of the sentence.
+
+![](README.assets/README-60e53346.png)
+
+[video](https://www.youtube.com/watch?v=yGTUuEx3GkA&amp%3Bindex=9)
+
+- What is the difference between **attention** and **self attention** mechanism ?
+
+  [stack](https://datascience.stackexchange.com/questions/49468/whats-the-difference-between-attention-vs-self-attention-what-problems-does-ea)
+
+Visual of what the mechanism is doing.
+
+![](README.assets/README-4e7eba79.png)
+
+![attention animated visual](assets/attention.gif)
+
+# Diet Architecture
+
+![](README.assets/README-ae1cf94c.png)
+[video](https://www.youtube.com/watch?v=vWStcJDuOUk&list=PL75e0qA87dlG-za8eLI6t0_Pbxafk-cxb&index=2)
 # Question
-
 
 * Whet is the difference between Artificial Neural Network and deep learning?
   <details>
